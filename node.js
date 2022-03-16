@@ -4,8 +4,17 @@ function setImageFn(){
 
     document.getElementById('mainFrame').style.background=`url(https://picsum.photos/${widthToBe}/${heightToBe})`;
 
+    document.getElementById('aboveContainer').style.display='flex';
+
     document.getElementById('mainFrame').style.width=`${widthToBe}px`;
     document.getElementById('mainFrame').style.height=`${heightToBe}px`;
+
+    document.getElementById('widthHeight').innerHTML=`Width: ${widthToBe}px, Height: ${heightToBe}px`;
+
+    setTimeout(() => {
+        document.getElementById('aboveContainer').style.display='none';
+    }, 1000);
+
 }
 
 window.addEventListener('resize',()=>{
