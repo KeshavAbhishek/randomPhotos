@@ -9,10 +9,11 @@
     <style>*{margin: 0;padding: 0;box-sizing: border-box;}</style>
     <script src="node.js" defer></script>
     <script src="https://kit.fontawesome.com/477be79e6e.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" defer></script>
 </head>
 <body>
     <div id="container" style="width: 100%;height: 100vh;background: whitesmoke;display: flex;align-items: center;justify-content: space-evenly;flex-direction: column;">
-        <div id="mainFrame" style="width: 90%;height: 75%;border: 0.5px dotted #000;">
+        <div id="mainFrame" style="width: 90%;height: 75%;">
             <div id="widthHeight">Width: px, Height: px</div>
             <div id="aboveContainer"><i class="fa-solid fa-circle-check"></i></div>
         </div>
@@ -21,14 +22,13 @@
             <table>
                 <tr>
                     <td id="widthLabel">Width:</td>
-                    <td id="widthInput"><input type="range" min="30" value="90" max="90" id="widthInputEntry" step="1"></td>
+                    <td id="widthInput"><input type="range" min="30" value="90" max="90" id="widthInputEntry" step="1" oninput="setImageFn()"></td>
                 </tr>
                 <tr>
                     <td id="heightLabel">Height:</td>
-                    <td id="heightInput"><input type="range" min="30" value="75" max="75" id="heightInputEntry" step="1"></td>
+                    <td id="heightInput"><input type="range" min="30" value="75" max="75" id="heightInputEntry" step="1" oninput="setImageFn()"></td>
                 </tr>
             </table>
-            <button id="changeImage" onclick="setImageFn()">Set</button>
         </div>
     </div>
 </body>
@@ -36,7 +36,7 @@
     var widthToBe = parseInt(window.innerWidth*(parseInt(document.getElementById('widthInputEntry').value))/100);
     var heightToBe = parseInt(window.innerHeight*(parseInt(document.getElementById('heightInputEntry').value))/100);
 
-    document.getElementById('mainFrame').style.background=`url(https://picsum.photos/${widthToBe}/${heightToBe})`;
+    document.getElementById('mainFrame').style.backgroundImage=`url(https://picsum.photos/${widthToBe}/${heightToBe})`;
 
     document.getElementById('mainFrame').style.width=`${widthToBe}px`;
     document.getElementById('mainFrame').style.height=`${heightToBe}px`;

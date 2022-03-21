@@ -1,11 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Tangerine&display=swap');
 
-#changeImage{
-    padding: 1% 5%;font-size: 2.5pc;font-weight: bolder;color: white;background: linear-gradient(45deg,rgb(44, 44, 204), rgb(206, 62, 241));border-radius: 20px;border: 0;outline: 0;cursor: pointer;font-family: 'Tangerine', cursive;
-}
-
-#changeImage:active{
-    background: linear-gradient(45deg, rgb(206, 62, 241), rgb(44, 44, 204));
+*{
+    user-select: none;
 }
 
 #mainFrame{
@@ -45,10 +41,16 @@ table{
 }
 
 td:nth-child(1){
-    font-size: 1.5pc;
+    font-size: 3pc;
+    font-family: 'Tangerine', cursive;
+    font-weight: 900;
+    text-shadow: 2px 2px 5px red;
 }
 td:nth-child(3){
-    font-size: 1.5pc;
+    font-size: 3pc;
+    font-family: 'Tangerine', cursive;
+    font-weight: 900;
+    text-shadow: 2px 2px 5px red;
 }
 
 #aboveContainer{
@@ -65,13 +67,13 @@ td:nth-child(3){
 }
 
 #aboveContainer i{
-    font-size: 10pc;
+    font-size: 75px;
     color: green;
+    background: white;
+    background-blend-mode: multiply;
+    border-radius: 50%;
 }
 
-#aboveContainer i::before{
-    width: 100%;
-    height: 100%;
-    background: white;
-    border-radius: 50%;
+::-webkit-scrollbar{
+    display: none;
 }
